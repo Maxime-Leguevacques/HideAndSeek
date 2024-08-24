@@ -7,7 +7,7 @@
 
 UMyBTTask_FindRandomLocation::UMyBTTask_FindRandomLocation(FObjectInitializer const& _objectInitializer)
 {
-	NodeName = "FindRandomLocationInNavMesh";
+	NodeName = "FindRandomLocation";
 }
 
 EBTNodeResult::Type UMyBTTask_FindRandomLocation::ExecuteTask(UBehaviorTreeComponent& _ownerComp, uint8* _nodeMemory)

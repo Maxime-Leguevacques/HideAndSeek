@@ -15,6 +15,9 @@ class HIDEANDSEEK_API AMyPlayer : public ACharacter
 {
 	GENERATED_BODY()
 
+private:
+	class UAIPerceptionStimuliSourceComponent* m_stimulusSourceComponent = nullptr;
+	
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spring Arm")
 	class USpringArmComponent* m_springArm = nullptr;
@@ -38,6 +41,7 @@ private:
 	void SetupSpringArm();
 	void SetupCamera();
 	void SetupJump();
+	void SetupStimulusSourceComponent();
 
 protected:
 	virtual void BeginPlay() override;

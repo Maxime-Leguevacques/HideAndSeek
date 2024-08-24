@@ -5,6 +5,8 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "Perception/AISense_Sight.h"
 
 
 #pragma region Spring arm values
@@ -27,6 +29,7 @@ AMyPlayer::AMyPlayer()
 	SetupSpringArm();
 	SetupCamera();
 	SetupJump();
+	SetupStimulusSourceComponent();
 }
 
 void AMyPlayer::SetupSpringArm()
@@ -43,7 +46,7 @@ void AMyPlayer::SetupCamera()
 	m_camera = CreateDefaultSubobject<UCameraComponent>(TEXT("PlayerCamera"));
 	m_camera->SetupAttachment(m_springArm, USpringArmComponent::SocketName);
 	m_camera->bUsePawnControlRotation = false;
-}
+}  
 
 void AMyPlayer::SetupJump()
 {
@@ -51,6 +54,16 @@ void AMyPlayer::SetupJump()
 	GetCharacterMovement()->AirControl = DEFAULT_JUMP_AIR_CONTROL;
 	GetCharacterMovement()->FallingLateralFriction = DEFAULT_FALLING_LATERAL_FRICTION;
 	GetCharacterMovement()->GravityScale = DEFAULT_PLAYER_GRAVITY_SCALE;
+}
+
+void AMyPlayer::SetupStimulusSourceComponent()
+{
+	m_stimulusSourceComponent = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("StimulusSourceComponent"));
+	if (m_stimulusSourceComponent)
+	{
+		m_stimulusSourceComponent->RegisterForSense(TSubclassOf<UAISense_Sight>());
+		m_stimulusSourceComponent->RegisterWithPerceptionSystem();
+	}
 }
 
 void AMyPlayer::BeginPlay()

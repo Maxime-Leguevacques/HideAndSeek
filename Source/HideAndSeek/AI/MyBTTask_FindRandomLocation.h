@@ -15,7 +15,7 @@ class HIDEANDSEEK_API UMyBTTask_FindRandomLocation : public UBTTask_BlackboardBa
 	GENERATED_BODY()
 
 private:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI", meta=(AllowPrivateAccess="true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
 	float m_searchRadius = 1500.0f;
 
 public:
