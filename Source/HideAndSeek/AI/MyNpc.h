@@ -11,7 +11,7 @@ class HIDEANDSEEK_API AMyNpc : public ACharacter
 	GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ai")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 	UBehaviorTree* m_behaviourTree = nullptr;
 
 public:
