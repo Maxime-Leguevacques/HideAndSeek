@@ -7,6 +7,7 @@
 
 
 UMyBTTask_FindPlayerLocation::UMyBTTask_FindPlayerLocation(FObjectInitializer const& _objectInitializer)
+	: UBTTask_BlackboardBase{_objectInitializer}
 {
 	NodeName = "FindPlayerLocation";
 }

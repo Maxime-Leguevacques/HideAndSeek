@@ -34,3 +34,8 @@ UBehaviorTree* AMyNpc::GetBehaviourTree() const
 	return m_behaviourTree;
 }
 
+AMyPatrolPath* AMyNpc::GetPatrolPath() const
+{
+	return m_patrolPath;
+}
+

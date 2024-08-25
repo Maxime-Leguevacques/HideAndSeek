@@ -6,6 +6,7 @@
 
 
 UMyBTTask_FindRandomLocation::UMyBTTask_FindRandomLocation(FObjectInitializer const& _objectInitializer)
+	: UBTTask_BlackboardBase{_objectInitializer}
 {
 	NodeName = "FindRandomLocation";
 }

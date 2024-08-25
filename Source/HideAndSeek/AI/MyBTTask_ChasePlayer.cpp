@@ -6,6 +6,7 @@
 
 
 UMyBTTask_ChasePlayer::UMyBTTask_ChasePlayer(FObjectInitializer const& _objectInitializer)
+	: UBTTask_BlackboardBase{_objectInitializer}
 {
 	NodeName = TEXT("ChasePlayer");
 }
