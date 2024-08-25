@@ -20,6 +20,7 @@ EBTNodeResult::Type UMyBTTask_FindPlayerLocation::ExecuteTask(UBehaviorTreeCompo
 		auto const playerLocation = player->GetActorLocation();
 		if (m_searchRandom)
 		{
+			UE_LOG(LogTemp, Warning, TEXT("TRUEEEEE"));
 			FNavLocation location;
 			// Get the navigation system and generate a random point near the player
 			if (auto* const navigationSystem = UNavigationSystemV1::GetCurrent(GetWorld()))

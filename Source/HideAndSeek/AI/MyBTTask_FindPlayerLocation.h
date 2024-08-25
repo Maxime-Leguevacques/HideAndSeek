@@ -12,7 +12,7 @@ class HIDEANDSEEK_API UMyBTTask_FindPlayerLocation : public UBTTask_BlackboardBa
 
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, category = "AI", meta = (AllowPrivateAccess = "true"))
-	bool m_searchRandom = true;
+	bool m_searchRandom = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, category = "AI", meta = (AllowPrivateAccess = "true"))
 	float m_searchRadius = 150.f;
 
